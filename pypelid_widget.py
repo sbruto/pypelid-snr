@@ -12,7 +12,7 @@ from pypelid.utils import consts
 from pypelid.survey import instrument, phot
 from pypelid.spectra import galaxy, linesim
 
-import progressbar
+plt.ioff()
 
 class PypelidWidget(object):
     """ """
@@ -126,12 +126,13 @@ class PypelidWidget(object):
                 plt.grid(True)
                 limits.append((m.max(), np.mean(var)**.5))
 
-            print "SNR: %g"%np.sqrt(np.sum(m**2/var))
+                print "SNR: %g"%np.sqrt(np.sum(m**2/var))
 
         with self.plot:
             a, b = np.max(limits, axis=0)
             plt.ylim(-b, a+b)
-            show_inline_matplotlib_plots()
+            display(fig)
+            # show_inline_matplotlib_plots()
 
         button.disabled = False
 
