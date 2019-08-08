@@ -122,6 +122,7 @@ class Instrument(object):
             self.widgets['plot'].clear_output()
 
             plt.figure(figsize=(3,2))
+            ax = plt.subplot(111)
 
             for key in ['transmission_red', 'transmission_blue']:
 
@@ -142,11 +143,12 @@ class Instrument(object):
                 x = x[a:b]
                 y = y[a:b]
 
-                plt.plot(x, y, c=colors[key], lw=2, label=self.widgets[key].value)
-            plt.grid()
-            plt.legend()
-            plt.xlabel("Wavelength")
-            plt.ylabel("Efficiency")
+                ax.plot(x, y, c=colors[key], lw=2, label=self.widgets[key].value)
+
+            ax.grid()
+            ax.legend()
+            ax.set_xlabel("Wavelength")
+            ax.set_ylabel("Efficiency")
             show_inline_matplotlib_plots()
 
     def plot_psf(self, change=None):
