@@ -41,7 +41,7 @@ def get_transmission_files(dir=TRANSMISSION_DIR):
 class Instrument(object):
     """ """
     style = {'description_width': '150px'}
-    layout = {'width': '400px'}
+    layout = {'width': '300px'}
 
     widgets = {
         'config': Dropdown(options=configurations.keys(), description='Configurations:'),
@@ -55,7 +55,7 @@ class Instrument(object):
         'darkcurrent': BoundedFloatText(value=0.019, min=0, max=100, step=0.1, description='dark current (elec/s/pix)'),
         'transmission_red': Dropdown(options=get_transmission_files(), description='Red grism transmission'),
         'transmission_blue': Dropdown(options=get_transmission_files(), description='Blue grism transmission'),
-        'plot': Output(),
+        'plot': Output(layout={'border':'1px solid black'}),
     }
 
     def __init__(self):
@@ -83,7 +83,10 @@ class Instrument(object):
         self.widgets['transmission_red'],self.widgets['transmission_blue']]
         elements += [HTML('<b>PSF</b>'), self.widgets['psf_amp'], self.widgets['psf_sig1'], self.widgets['psf_sig2']]
         elements += [HTML('<b>Detector</b>'), self.widgets['readnoise'], self.widgets['darkcurrent']]
-        self.widget = HBox([VBox(elements), self.widgets['plot']])
+        self.widget = HBox(
+            [VBox(elements),
+            VBox([self.widgets['plot']],layout={'border':'1px solid black'})]
+        )
 
         self.plot_transmission()
 
