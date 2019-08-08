@@ -113,7 +113,7 @@ class PypelidWidget(object):
 
             m = np.mean(realizations, axis=0)
             var = np.var(realizations, axis=0)
-            low, high = np.percentile(realizations, [25,75], axis=0)
+            low, high = np.percentile(realizations, [16, 84], axis=0)
 
             x = np.arange(L.npix) * L.dispersion + L.lambda_min
 
@@ -124,7 +124,7 @@ class PypelidWidget(object):
                 plt.fill_between(x, low, high, color=colors[i], alpha=0.2)
                 plt.plot(x, m, lw=2, c=colors[i], zorder=10)
                 plt.grid(True)
-                limits.append((m.max(), np.mean(var)**.5))
+                limits.append((m.max(), np.median(var)**.5))
 
                 print "SNR: %g"%np.sqrt(np.sum(m**2/var))
 
