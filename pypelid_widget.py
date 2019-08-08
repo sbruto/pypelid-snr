@@ -2,6 +2,7 @@ import time
 import numpy as np
 from matplotlib import pyplot as plt
 
+from IPython.display import display,clear_output
 from ipywidgets import Text, Label, HTML, HBox, VBox, Layout, Button, BoundedFloatText, Dropdown, Tab, Output, IntProgress
 from ipywidgets.widgets.interaction import show_inline_matplotlib_plots
 

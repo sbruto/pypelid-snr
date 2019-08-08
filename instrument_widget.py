@@ -86,7 +86,7 @@ class Instrument(object):
         elements += [HTML('<b>Detector</b>'), self.widgets['readnoise'], self.widgets['darkcurrent']]
         self.widget = HBox(
             [VBox(elements),
-            VBox([self.widgets['plot']],layout={'border':'1px solid black'})]
+            VBox([self.widgets['plot']])]
         )
 
         self.plot_transmission()
@@ -121,8 +121,6 @@ class Instrument(object):
         with self.widgets['plot']:
 
             clear_output(wait=True)
-
-            print "Transmission plot"
 
             # fig = plt.figure(figsize=(3,2))
             # ax = plt.subplot(111)
