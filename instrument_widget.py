@@ -1,4 +1,5 @@
 import os
+from IPython.display import display,clear_output
 from ipywidgets import Text, Label, HTML, HBox, VBox, Layout, Button, BoundedFloatText, BoundedIntText, Dropdown, Output
 from ipywidgets.widgets.interaction import show_inline_matplotlib_plots
 
@@ -119,10 +120,11 @@ class Instrument(object):
 
         with self.widgets['plot']:
 
-            self.widgets['plot'].clear_output()
+            clear_output(wait=True)
 
-            plt.figure(figsize=(3,2))
-            ax = plt.subplot(111)
+            # fig = plt.figure(figsize=(3,2))
+            # ax = plt.subplot(111)
+            fig,ax = plt.subplots()
 
             for key in ['transmission_red', 'transmission_blue']:
 
@@ -149,7 +151,8 @@ class Instrument(object):
             ax.legend()
             ax.set_xlabel("Wavelength")
             ax.set_ylabel("Efficiency")
-            show_inline_matplotlib_plots()
+            display(fig)
+            # show_inline_matplotlib_plots()
 
     def plot_psf(self, change=None):
         """ """
