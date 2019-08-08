@@ -118,6 +118,8 @@ class Instrument(object):
 
             self.widgets['plot'].clear_output()
 
+            plt.figure(figsize=(3,2))
+
             for key in ['transmission_red', 'transmission_blue']:
 
                 if not self.widgets[key].value:
