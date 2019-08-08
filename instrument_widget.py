@@ -56,7 +56,7 @@ class Instrument(object):
         'darkcurrent': BoundedFloatText(value=0.019, min=0, max=100, step=0.1, description='dark current (elec/s/pix)'),
         'transmission_red': Dropdown(options=get_transmission_files(), description='Red grism transmission'),
         'transmission_blue': Dropdown(options=get_transmission_files(), description='Blue grism transmission'),
-        'plot': Output(layout={'border':'1px solid black'}),
+        'plot': Output(),
     }
 
     def __init__(self):
@@ -121,6 +121,8 @@ class Instrument(object):
         with self.widgets['plot']:
 
             clear_output(wait=True)
+
+            print "Transmission plot"
 
             # fig = plt.figure(figsize=(3,2))
             # ax = plt.subplot(111)
