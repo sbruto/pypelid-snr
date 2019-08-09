@@ -1,4 +1,4 @@
-pypelidcalc @ git+https://github.com/bengranett/pypelidcalc.git@master#egg=pypelidcalc
-templatefit @ git+https://github.com/bengranett/templatefit.git@master#egg=templatefit
+pypelidcalc @ git+https://github.com/bengranett/pypelidcalc@master#egg=pypelidcalc-0
+templatefit @ git+https://github.com/bengranett/templatefit@master#egg=templatefit-0
 ipywidgets
 matplotlib
