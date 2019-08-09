@@ -7,5 +7,7 @@ dependencies:
     - cythongsl
     - pandas
     - matplotlib 
-
+    - ipywidgets
+    - pypelidcalc @ git+https://github.com/bengranett/pypelidcalc@master#egg=pypelidcalc-0
+    - templatefit @ git+https://github.com/bengranett/templatefit@master#egg=templatefit-0
   - appmode
