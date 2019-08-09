@@ -1,2 +1,11 @@
 dependencies:
+  - python2.7
+  - numpy
+  - pip
+  - pip:
+    - cython
+    - cythongsl
+    - pandas
+    - matplotlib 
+
   - appmode
