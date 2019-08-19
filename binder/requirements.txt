@@ -4,7 +4,7 @@ pandas<=0.24
 
 cython
 cythongsl
-matplotlib
+plotly
 
 pypelidcalc @ git+https://github.com/bengranett/pypelidcalc@master#egg=pypelidcalc-0
 templatefit @ git+https://github.com/bengranett/templatefit@master#egg=templatefit-0
